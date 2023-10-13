@@ -1,4 +1,6 @@
-# Database-Project
+# Grocery Store Database Project
+
+
 For my project, I'd like to create an inventory control management system for a chain grocery store.
 
 
