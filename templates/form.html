@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enter New Customer Info</title>
+    </head>
+    <body>
+        <h1>Enter New Customer Info</h1>
+        <form action="/add_customer" method="POST">
+            <label for="CID">Customer ID:</label>
+            <input type="text" id="CID" name="customer_id">
+            <br>
+            <label for="CName">Customer Name:</label>
+            <input type="text" id="CName" name="customer_name">
+            <br>
+            <label for="PayMeth">Payment Method:</label>
+            <input type="text" id="PayMeth" name="payment_method">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <h1>Customer Entity</h1>
+        <table>
+            <tr>
+                <th>CustomerID(PK)</th>
+                <th>CustomerName</th>
+                <th>PaymentMethod</th>
+            </tr>
+            <tr>
+                <td>10000001</td>
+                <td>Bob</td>
+                <td>Credit</td>
+            </tr>
+            <tr>
+                <td>10000002</td>
+                <td>Joe</td>
+                <td>Debit</td>
+            </tr>
+            <tr>
+                <td>10000003</td>
+                <td>John</td>
+                <td>Cash</td>
+            </tr>
+            <tr>
+                <td>10000004</td>
+                <td>Steve</td>
+                <td>Check</td>
+            </tr>
+            {% for customer in customers %}
+            <tr>
+                <td>{{  customer.CustomerID  }}</td>
+                <td>{{  customer.CustomerName  }}</td>
+                <td>{{  customer.PaymentMethod  }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
