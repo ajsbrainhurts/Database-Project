@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import mysql.connector, os, json
 
-# 
+# Isn't this also a security vulnerability? I wasn't sure how else to specify the path, I tried using a relative path but that didn't work. 
 secrets = os.path.abspath('/home/aj/secrets/secrets.json')
 with open(secrets, 'r') as secretFile:
     creds = json.load(secretFile)['mysqlcredentials']
