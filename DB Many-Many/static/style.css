@@ -1,0 +1,20 @@
+body {
+    background-color: dimgrey;
+}
+table, th, td {
+    color:black;
+    font-family: Verdana;
+    border: 2px solid;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    color:black;
+    font-family: Verdana;
+}
+p {
+    color:black;
+    font-family: Verdana;
+}

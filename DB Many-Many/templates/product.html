@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <center>
+        <h1>Products in Order</h1>
+    </center>
+    <table>
+        <table class="center">
+            <tr>
+                <th>ProductID</th>
+                <th>ProductType</th>
+                <th>ProductPrice</th>
+                <th>Orders containing Product</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product[0] }}</td>
+                <td>{{ product[1] }}</td>
+                <td>{{ product[2] }}</td>
+                <td><a href="/orders_for_product?ProductID={{ product[0] }}">View orders containing this product</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+        <center>
+            <p><a href="/">Back to Orders</a></p>
+        </center>
+</body>
+
+</html>
