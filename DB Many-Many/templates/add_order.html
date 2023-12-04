@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <center>
+        <h1>Add New Order</h1>
+
+
+    <form method="post" action="/add_order">
+        <label for="orderID">Order ID:</label>
+        <input type="text" name="orderID" required><br>
+        <label for="customerID">Customer ID:</label>
+        <input type="text" name="customerID" required><br>
+        <label for="totalCost">Total Cost:</label>
+        <input type="text" name="totalCost" required><br>
+        <label for="dateOfOrder">Date Of Order (YYYY-MM-DD):</label>
+        <input type="text" name="dateOfOrder" required><br>
+        <input type="submit" value="Add Order">
+    </form>
+        <p><a href="/">Back to Orders</a></p>
+    </center>
+</body>
+
+</html>

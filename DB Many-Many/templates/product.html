@@ -6,28 +6,35 @@
 
 <body>
     <center>
-        <h1>Products in Order</h1>
+        <h1>Products</h1>
     </center>
-    <table>
         <table class="center">
             <tr>
+                <th>Delete</th>
+                <th>Edit</th>
                 <th>ProductID</th>
                 <th>ProductType</th>
                 <th>ProductPrice</th>
-                <th>Orders containing Product</th>
+                <th>View Orders</th>
             </tr>
             {% for product in products %}
             <tr>
+                <td>
+                    <form method="post" action="/delete_product/{{ product[0] }}">
+                        <input type="hidden" name="method" value="DELETE">
+                        <input type="submit" value="Delete Product">
+                    </form>
+                </td>
+                <td><a href="/update_product/{{ product[0] }}">Edit Product</a></td>
                 <td>{{ product[0] }}</td>
                 <td>{{ product[1] }}</td>
                 <td>{{ product[2] }}</td>
-                <td><a href="/orders_for_product?ProductID={{ product[0] }}">View orders containing this product</a>
-                </td>
-
+                <td><a href="/orders_for_product?ProductID={{ product[0] }}">View orders w/ this product</a></td>
             </tr>
             {% endfor %}
         </table>
         <center>
+            <p><a href="/add_product">Add a new product</a></p>
             <p><a href="/">Back to Orders</a></p>
         </center>
 </body>

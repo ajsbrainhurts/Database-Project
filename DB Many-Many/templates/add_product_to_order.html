@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <center>
+        <h1>Add a Product to this Order</h1>
+    <form method="post" action="/add_product_to_order/{{ order[0] }}">
+        <label for="productID">Product ID:</label>
+        <input type="text" name="productID" required><br>
+        <input type="submit" value="Add Product">
+    </form>
+        <p><a href="/">Back to Orders</a></p>
+    </center>
+</body>
+
+</html>

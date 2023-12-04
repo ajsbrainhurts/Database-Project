@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <center>
-    <h1>Grocery Store Orders</h1>
+    <h1>Orders</h1>
 </center>
+
 <body>
     <table>
         <table class="center">
             <tr>
+                <th>Delete</th>
+                <th>Add</th>
                 <th>Order ID</th>
                 <th>Customer ID</th>
                 <th>Total Cost</th>
                 <th>Date Of Order</th>
-                <th>Products in Order</th>
+                <th>View Products</th>
+                <th>Edit</th>
             </tr>
             {% for order in orders %}
             <tr>
+                <td>
+                    <form method="post" action="/delete_order/{{ order[0] }}">
+                        <input type="hidden" name="method" value="DELETE">
+                        <input type="submit" value="Delete Order">
+                    </form>
+                </td>
+                <td><a href="/add_product_to_order/{{ order[0] }}">Add product</a></td>
                 <td>{{ order[0] }}</td>
                 <td>{{ order[1] }}</td>
                 <td>{{ order[2] }}</td>
                 <td>{{ order[3] }}</td>
-                <td><a href="/product?ProductID={{order[0]}}">View products in order</a></td>
+                <td><a href="/products_in_order/{{ order[0] }}">View products in order</a></td>
+                <td><a href="/update_order/{{ order[0] }}">Edit order</a></td>
             </tr>
             {% endfor %}
         </table>
+        <br>
+        <center>
+            <p><a href="/add_order">Add an Order</a></p>
+        </center>
+        <br>
+        <center>
+            <p><a href="/product">View Products</a></p>
+        </center>
 </body>
 
 </html>

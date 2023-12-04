@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <center>
+        <h1>Update Order</h1>
+        <form method="post" action="/update_order/{{ order[0] }}">
+            <label for="totalCost">Total Cost:</label>
+            <input type="text" id="totalCost" name="totalCost" value="{{ order[1] }}" required>
+            <br>
+            <label for="dateOfOrder">Date of Order:</label>
+            <input type="text" id="dateOfOrder" name="dateOfOrder" value="{{ order[2] }}" required>
+            <input type="submit" value="Update Order">
+        </form>
+
+        <p><a href="/">Back to Orders</a></p>
+    </center>
+</body>
+
+</html>

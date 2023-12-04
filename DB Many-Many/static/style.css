@@ -18,3 +18,11 @@ p {
     color:black;
     font-family: Verdana;
 }
+input {
+    width: auto;
+    padding: 5px 10px;
+    margin: 4px 0;
+    box-sizing:border-box;
+    font-family: Verdana;
+    border: 2px solid;
+}
